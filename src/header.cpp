@@ -79,7 +79,7 @@ void tweezers(coordinates &input_table)
 
 void suture(coordinates &input_table)
 {
-    double tmp_array[4] = {-1,0,0,0};
+    double tmp_array[4] = {-1,-1,-1,-1};
     std::cout << "input suture_point_x0: ";
     std::cin >> tmp_array[0];
     std::cout << "input suture_point_y0: ";
@@ -89,8 +89,13 @@ void suture(coordinates &input_table)
     std::cout << "input suture_point_y1: ";
     std::cin >> tmp_array[3];
 
-    while(tmp_array[0] != input_table.x0 && tmp_array[1]!= input_table.y0 &&
-            tmp_array[2] != input_table.x1 && tmp_array[3] != input_table.y1)
+    while
+    (
+            (tmp_array[0] != input_table.x0)
+            || (tmp_array[1]!= input_table.y0)
+            || (tmp_array[2] != input_table.x1)
+            || (tmp_array[3] != input_table.y1)
+    )
     {
         std::cout << "WRONG. Try again: " << std::endl;
         std::cout << "input suture_point_x0: ";
